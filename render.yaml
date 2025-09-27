@@ -1,0 +1,17 @@
+# render.yaml
+# This file defines the services for your application on Render.
+
+services:
+  # A name for your web service
+  - type: web
+    name: flask-vulnerable-app
+    # The runtime environment for your app
+    env: python
+    # The command to install dependencies
+    buildCommand: "pip install -r requirements.txt"
+    # The command to start your web server in production
+    startCommand: "gunicorn app:app"
+    # Specify the free instance type
+    plan: free
+    # (Optional) Specify a region close to you for better performance
+    region: singapore
